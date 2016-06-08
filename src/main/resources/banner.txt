@@ -1,0 +1,7 @@
+This file will replace the default Spring Boot banner:
+Application Version = ${application.version}
+Application Formatted Version = ${application.formatted-version}
+Spring-boot version = ${spring-boot.version}
+Spring-boot Formatted Version = ${spring-boot.formatted-version}
+NAME=${AnsiColor.NAME}
+Application Title = ${application.title}

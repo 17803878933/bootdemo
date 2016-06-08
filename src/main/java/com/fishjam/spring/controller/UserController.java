@@ -13,6 +13,6 @@ public class UserController {
   @RequestMapping("/hello")
   @ResponseBody
   public String hello(){
-    return "Hello World " + new Date().toString();
+    return "Hello World ::  " + new Date().toString();
   }
 }

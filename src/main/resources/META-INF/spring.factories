@@ -1,0 +1,2 @@
+#ÉèÖÃ Spring Framework events µÄ¼àÌıÆ÷
+#org.springframework.context.ApplicationListener=com.fishjam.spring.utils.MyEventListener

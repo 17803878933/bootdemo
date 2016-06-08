@@ -2,8 +2,9 @@ package com.fishjam.spring;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-//Part III. Using Spring Boot
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+//26.5 Custom log configuration
 //http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/
 
 //http://docs.spring.io/spring/docs/4.3.0.BUILD-SNAPSHOT/spring-framework-reference/htmlsingle/
@@ -53,11 +54,25 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * [SpringApplication]
 ***********************************************************************************************************************/
 
-@SpringBootApplication
-@EnableAutoConfiguration
+@Configuration    //java-based configuration
+@EnableAutoConfiguration()
+@ComponentScan
+//@SpringBootApplication    //等价写法
 public class ApplicationMain {
 
   public static void main(String[] args) {
+    //TODO:
+    //  1.run 的第一个参数 source 表示是配置信息，可以是 java-based 的类, 也可以是 XML source,
+    //    推荐用@Configuration 修饰的Java类（通过搜索  enable* 注解来找到配置信息?）
+    //  2.You don’t need to put all your @Configuration into a single class. The @Import annotation can be used to
+    //    import additional configuration classes. Alternatively, you can use @ComponentScan to automatically pick up
+    //    all Spring components, including @Configuration classes.
+
     SpringApplication.run(ApplicationMain.class, args);
+    //new SpringApplicationBuilder(ApplicationMain.class)
+    //    .web(true)
+    //    .bannerMode(Banner.Mode.CONSOLE)
+    //    //.build().setWebEnvironment()
+    //    .run(args);
   }
 }
